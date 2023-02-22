@@ -7,12 +7,10 @@ function handleSubmit(event) {
   const {
     elements: { email, password },
   } = form;
-  if (email.value === "" || password.value === "") {
+  if (email.value !== "" || password.value !== "") {
+    console.log({ email: email.value, password: password.value });
+  } else {
     alert("ERROR... Please fill all empty fields.");
   }
-  const loginObject = { email: email.value, password: password.value };
-
-  console.log(loginObject);
-
   event.currentTarget.reset();
 }
